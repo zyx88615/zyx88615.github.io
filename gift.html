@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mother's Day Gift</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(circle at top, #fff6ef 0%, #f6dcd1 45%, #ead1c7 100%);
+  color: #7a4a42;
+  overflow-x: hidden;
+}
+
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  bottom: -40px;
+  color: rgba(193, 119, 114, 0.35);
+  font-size: 22px;
+  animation: floatUp 8s linear infinite;
+}
+
+.heart:nth-child(1) { left: 12%; animation-delay: 0s; }
+.heart:nth-child(2) { left: 25%; animation-delay: 2s; font-size: 16px; }
+.heart:nth-child(3) { left: 45%; animation-delay: 1s; font-size: 28px; }
+.heart:nth-child(4) { left: 70%; animation-delay: 3s; font-size: 18px; }
+.heart:nth-child(5) { left: 88%; animation-delay: 1.5s; font-size: 24px; }
+
+@keyframes floatUp {
+  from { transform: translateY(0) scale(1); opacity: 0; }
+  15% { opacity: 1; }
+  to { transform: translateY(-110vh) scale(1.5); opacity: 0; }
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+}
+
+.card {
+  width: 100%;
+  max-width: 920px;
+  background: rgba(255, 250, 246, 0.92);
+  border-radius: 34px;
+  box-shadow: 0 30px 90px rgba(120,70,60,0.25);
+  text-align: center;
+  padding: 42px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(193,119,114,0.28);
+  border-radius: 26px;
+  pointer-events: none;
+}
+
+.badge {
+  display: inline-block;
+  background: #fff0ea;
+  color: #b76561;
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-size: 46px;
+  color: #c17772;
+  margin: 0 0 14px;
+}
+
+.intro {
+  font-size: 22px;
+  line-height: 1.7;
+  margin: 0 auto 30px;
+  max-width: 680px;
+}
+
+.reveal-btn {
+  border: 0;
+  background: linear-gradient(135deg, #c17772, #e2a193);
+  color: white;
+  font-size: 20px;
+  padding: 15px 34px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 14px 30px rgba(193,119,114,0.35);
+  transition: transform 0.2s ease;
+}
+
+.reveal-btn:hover {
+  transform: translateY(-2px);
+}
+
+.gift {
+  display: none;
+  margin-top: 34px;
+  animation: reveal 1s ease forwards;
+}
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(24px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.gift img {
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.16);
+}
+
+.gift-text {
+  margin-top: 28px;
+  font-size: 34px;
+  font-weight: bold;
+  color: #7a4a42;
+}
+
+.note {
+  font-size: 20px;
+  line-height: 1.8;
+  max-width: 720px;
+  margin: 18px auto 0;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 30px;
+  color: #b76561;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  .card { padding: 30px 20px; }
+  h1 { font-size: 34px; }
+  .intro { font-size: 18px; }
+  .gift-text { font-size: 26px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hearts">
+  <div class="heart">♥</div>
+  <div class="heart">♥</div>
+  <div class="heart">♥</div>
+  <div class="heart">♥</div>
+  <div class="heart">♥</div>
+</div>
+
+<main class="page">
+  <section class="card">
+    <div class="badge">A little surprise for you</div>
+
+    <h1>Happy Mother’s Day</h1>
+
+    <p class="intro">
+      今天有一个小小的礼物给你。<br>
+      谢谢你一直照顾这个家，也谢谢你把爱给了我们。
+    </p>
+
+    <button class="reveal-btn" onclick="showGift()">打开礼物 🎁</button>
+
+    <div class="gift" id="giftBox">
+      <img src="gift.png" alt="Sonos Gift">
+
+      <div class="gift-text">
+        你会收到减价后的 SONOS
+      </div>
+
+      <p class="note">
+        希望它能把更多音乐、电影和快乐带进我们的家。<br>
+        母亲节快乐，老婆 ❤️
+      </p>
+
+      <a class="back" href="index.html">← Back to Mother’s Day Card</a>
+    </div>
+  </section>
+</main>
+
+<script>
+function showGift() {
+  document.getElementById("giftBox").style.display = "block";
+  document.querySelector(".reveal-btn").style.display = "none";
+}
+</script>
+
+</body>
+</html>
