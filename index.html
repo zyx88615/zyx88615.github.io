@@ -1,16 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Happy Mother's Day</title>
 
 <style>
+* { box-sizing: border-box; }
+
 body {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
   background: linear-gradient(180deg, #fff7f0, #f7dfd5);
   color: #7a4a42;
+  overflow-x: hidden;
+}
+
+/* 背景爱心动画 */
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  bottom: -40px;
+  color: rgba(193,119,114,0.35);
+  font-size: 20px;
+  animation: floatUp 8s linear infinite;
+}
+
+.heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+.heart:nth-child(2) { left: 30%; animation-delay: 2s; }
+.heart:nth-child(3) { left: 50%; animation-delay: 1s; }
+.heart:nth-child(4) { left: 70%; animation-delay: 3s; }
+.heart:nth-child(5) { left: 85%; animation-delay: 1.5s; }
+
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 0; }
+  20% { opacity: 1; }
+  to { transform: translateY(-110vh); opacity: 0; }
 }
 
 .hero {
@@ -21,29 +51,33 @@ body {
   padding: 30px;
 }
 
-.card, .gift-card {
+.card {
   max-width: 980px;
-  background: rgba(255, 250, 246, 0.9);
-  border-radius: 28px;
-  box-shadow: 0 25px 70px rgba(120, 70, 60, 0.22);
+  background: rgba(255,250,246,0.92);
+  border-radius: 30px;
+  box-shadow: 0 25px 80px rgba(120,70,60,0.25);
   overflow: hidden;
   text-align: center;
 }
 
-.main-img, .gift-img {
-  width: 100%;
-  display: block;
+.image-wrap {
+  padding: 18px;
 }
 
-.message, .gift-content {
+.image-wrap img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.message {
   padding: 35px 28px 45px;
 }
 
 h1 {
-  font-size: 46px;
-  margin: 0 0 15px;
+  font-size: 44px;
   color: #c17772;
-  letter-spacing: 3px;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
 }
 
 p {
@@ -57,72 +91,66 @@ p {
 
 .qr-box img {
   width: 180px;
-  border-radius: 18px;
-  padding: 12px;
+  border-radius: 16px;
+  padding: 10px;
   background: white;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
-.gift-section {
-  padding: 50px 20px 80px;
-  display: flex;
-  justify-content: center;
-}
-
-.gift-title {
-  font-size: 42px;
-  color: #c17772;
-}
-
-.gift-text {
-  font-size: 30px;
-  font-weight: bold;
-  color: #7a4a42;
+.footer {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #b76561;
 }
 
 @media (max-width: 600px) {
   h1 { font-size: 32px; }
-  .gift-title { font-size: 30px; }
-  .gift-text { font-size: 24px; }
+  p { font-size: 17px; }
 }
 </style>
 </head>
 
 <body>
 
+<!-- 爱心动画 -->
+<div class="hearts">
+  <div class="heart">♥</div>
+  <div class="heart">♥</div>
+  <div class="heart">♥</div>
+  <div class="heart">♥</div>
+  <div class="heart">♥</div>
+</div>
+
 <section class="hero">
   <div class="card">
-    <img class="main-img" src="mothers-day.png" alt="Happy Mother's Day">
+
+    <div class="image-wrap">
+      <img src="mothers-day.png" alt="Mother's Day">
+    </div>
 
     <div class="message">
       <h1>Happy Mother’s Day</h1>
 
       <p>
-        To the most beautiful mom and wife,<br>
-        thank you for everything you do for our family.
+        给最美的妈妈，也是最好的老婆，<br>
+        谢谢你一直为这个家付出的一切。
       </p>
 
       <p>
-        Your love, patience, and warmth make our home feel complete.
+        因为有你，我们的生活才完整。<br>
+        我们真的很幸运有你 ❤️
       </p>
 
       <div class="qr-box">
-        <p>Scan for your Mother’s Day Gift 🎁</p>
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://zyx88615.github.io/%23gift" alt="Mother's Day Gift QR Code">
+        <p>🎁 扫描领取你的礼物</p>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://zyx88615.github.io/gift.html">
+      </div>
+
+      <div class="footer">
+        Love you forever 💖
       </div>
     </div>
-  </div>
-</section>
 
-<section id="gift" class="gift-section">
-  <div class="gift-card">
-    <img class="gift-img" src="gift.png" alt="Sonos Gift">
-
-    <div class="gift-content">
-      <div class="gift-title">Mother’s Day Gift</div>
-      <p class="gift-text">你会收到减价后的 SONOS 🎁</p>
-      <p>Happy Mother’s Day. You deserve the best.</p>
-    </div>
   </div>
 </section>
 
