@@ -1,64 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Website</title>
-  <style>
-    body {
-      font-family: Arial;
-      margin: 0;
-      background: #f5f5f5;
-      text-align: center;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Mother's Day</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    background: linear-gradient(180deg, #fff7f0, #f7dfd5);
+    color: #7a4a42;
+  }
+
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+  }
+
+  .card {
+    max-width: 980px;
+    background: rgba(255, 250, 246, 0.88);
+    border-radius: 28px;
+    box-shadow: 0 25px 70px rgba(120, 70, 60, 0.22);
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .image-wrap {
+    padding: 18px;
+  }
+
+  .image-wrap img {
+    width: 100%;
+    border-radius: 22px;
+    display: block;
+  }
+
+  .message {
+    padding: 35px 28px 45px;
+  }
+
+  h1 {
+    font-size: 46px;
+    margin: 0 0 15px;
+    color: #c17772;
+    letter-spacing: 3px;
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 1.8;
+    max-width: 720px;
+    margin: 0 auto 18px;
+  }
+
+  .love {
+    margin-top: 25px;
+    font-size: 22px;
+    color: #b65f5b;
+  }
+
+  .signature {
+    margin-top: 22px;
+    font-size: 24px;
+    font-style: italic;
+  }
+
+  @media (max-width: 600px) {
+    .hero {
+      padding: 14px;
     }
-    header {
-      background: #333;
-      color: white;
-      padding: 40px;
-      font-size: 28px;
+
+    h1 {
+      font-size: 32px;
     }
-    .container {
-      padding: 40px;
+
+    p {
+      font-size: 17px;
     }
-    .card {
-      background: white;
-      margin: 20px auto;
-      padding: 20px;
-      width: 80%;
-      border-radius: 10px;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+
+    .message {
+      padding: 28px 18px 34px;
     }
-    footer {
-      margin-top: 40px;
-      padding: 20px;
-      background: #333;
-      color: white;
-    }
-  </style>
+  }
+</style>
 </head>
 
 <body>
+  <section class="hero">
+    <div class="card">
+      <div class="image-wrap">
+        <img src="mothers-day.png" alt="Happy Mother's Day" />
+      </div>
 
-<header>
-  Welcome to My Website
-</header>
+      <div class="message">
+        <h1>Happy Mother’s Day</h1>
 
-<div class="container">
+        <p>
+          To the most beautiful mom and wife,
+          thank you for everything you do for our family.
+        </p>
 
-  <div class="card">
-    <h2>About Me</h2>
-    <p>This is my personal website hosted on GitHub Pages.</p>
-  </div>
+        <p>
+          Your love, patience, and warmth make our home feel complete.
+          We are so lucky to have you.
+        </p>
 
-  <div class="card">
-    <h2>My Project</h2>
-    <p>You can showcase your house design, portfolio, or anything here.</p>
-  </div>
+        <div class="love">♥ Forever grateful. Forever loved. ♥</div>
 
-</div>
-
-<footer>
-  © 2026 My Website
-</footer>
-
+        <div class="signature">
+          With love, from your family
+        </div>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
